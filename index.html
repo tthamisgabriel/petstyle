@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet&Style</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800">
+
+<!--HEADER-->
+ <header class="bg-yellow-100 p-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Pet&Style</h1>
+      <nav class="space-x-4">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#produtos" class="hover:underline">Produtos</a>
+        <a href="#depoimentos" class="hover:underline">Depoimentos</a>
+        <a href="#contato" class="hover:underline">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+<!--HERO-->
+<section class="text-center p-6">
+    <h2 class="text-center text-xl font-bold p-8">Estilo e conforto para o seu pet</h2>
+     <p class="mb-4 text-x">Produtos exclusivos para deixar seu pet ainda mais estiloso</p>
+    <img src="images/hero.jpg" class="w-full h-[600px] object-cover rounded-lg">
+</section>
+
+<!--PRODUTOS-->
+ <section>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+
+      
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="images/produto1.jpg" class="w-full h-60 object-cover rounded mb-2">
+        <h3 class="font-bold">Caminhas Premium</h3>
+        <p>Conforto total para seu amiguinho</p>
+        <span class="font-bold text-blue-600">R$ 130</span>
+      </div>
+
+     
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="images/produto2.jpg" class="w-full h-60 object-cover rounded mb-2">
+        <h3 class="font-bold">Brinquedinhos</h3>
+        <p>Diversão garantida</p>
+        <span class="font-bold text-blue-600">R$ 45</span>
+      </div>
+
+      
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="images/produto3.jpg" class="w-full h-60 object-cover rounded mb-2">
+        <h3 class="font-bold">Rações premium</h3>
+        <p>Alimentação</p>
+        <span class="font-bold text-blue-600">R$ 135</span>
+      </div>
+
+      
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="images/produto4.jpg" class="w-full h-60 object-cover rounded mb-2">
+        <h3 class="font-bold">Comedouros especiais</h3>
+        <p>Acessórios</p>
+        <span class="font-bold text-blue-600">R$ 60</span>
+      </div>
+
+    </div>
+  </section>
+
+<!--DEPOIMENTOS-->
+
+<section id="depoimentos" class="bg-blue-100 p-8 text-center">
+  <h2 class="text-2xl font-bold mb-6">Depoimentos</h2>
+
+  <div class="relative h-20 flex items-center justify-center">
+    <p class="depoimento absolute opacity-0 transition-opacity duration-1000 text-lg italic font-serif">
+      "Meu cachorro amou a caminha!" - Ana
+    </p>
+
+    <p class="depoimento absolute opacity-0 transition-opacity duration-1000 text-lg italic font-serif">
+      "Produtos lindos e de qualidade." - João
+    </p>
+
+    <p class="depoimento absolute opacity-0 transition-opacity duration-1000 text-lg italic font-serif">
+      "Entrega rápida e ótimo atendimento." - Carla
+    </p>
+  </div>
+</section>
+
+  <!--CONTATO-->
+  <section id="contato" class="p-8">
+    <h2 class="text-2xl font-bold text-center mb-4">Contato</h2>
+
+    <div class="max-w-md mx-auto text-center">
+      <p>Email: contato@petstyle.com</p>
+      <p>Telefone: (11) 99999-9999</p>
+    </div>
+
+<!-- FORM -->
+    <div class="mt-8">
+        <p>Envie sua dúvida, sugestão, elogio ou reclamação e responderemos em breve:</p>
+        <form class="mt-4 space-y-3">
+            <input type="text" placeholder="Nome" class="w-full p-2 border rounded">
+            <input type="email" placeholder="Email" class="w-full p-2 border rounded">
+            <textarea placeholder="Mensagem" class="w-full p-4 border rounded"></textarea>
+            <button class="bg-yellow-200 px-10 py-2 rounded mx-auto block w-fit hover:bg-yellow-300">Enviar</button>
+        </form>
+    </div>
+  </section>
+
+
+
+  <script>
+    const depoimentos = document.querySelectorAll('.depoimento');
+    let index = 0;
+
+    function mostrarDepoimento() {
+        depoimentos.forEach(el => el.classList.remove('opacity-100'));
+        
+        depoimentos[index].classList.add('opacity-100');
+
+        index = (index + 1) % depoimentos.length;
+    }
+
+    mostrarDepoimento();
+    setInterval(mostrarDepoimento, 3000); 
+</script>
+
+</body>
+</html>
+
+
